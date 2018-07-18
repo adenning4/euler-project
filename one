@@ -1,1 +1,38 @@
 #  problem one
+
+"""
+Created on Tue Jul 17 17:55:29 2018
+
+@author: aarondenning
+
+Problem title: Multiples of 3 and 5
+Problem description: If we list all the natural numbers below 10 that are 
+multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below 1000.
+"""
+
+multiples=set()  #Create an empty set, a set only holds unique values
+
+bound=1000
+
+i=0
+while True:
+    i += 1
+    
+    mo3 = 3*i
+    mo5 = 5*i
+    
+    if mo5 < bound:
+        multiples.add(mo5)
+    
+    if mo3 < bound:
+        multiples.add(mo3)
+    else:
+        break
+
+value=0
+for num in multiples:
+    value += num
+    
+print(value)
+        
